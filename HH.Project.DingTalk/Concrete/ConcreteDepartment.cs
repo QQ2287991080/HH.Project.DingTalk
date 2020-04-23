@@ -59,7 +59,7 @@ namespace HH.Project.DingTalk.Concrete
                     continue;
                 }
                 DepartmentFoucs facus = new DepartmentFoucs();
-                if (!facus.Valid(conn,item.ToString()))
+                if (!facus.Valid(conn,item.ToString()).Invoke())
                 {
                     continue;
                 }

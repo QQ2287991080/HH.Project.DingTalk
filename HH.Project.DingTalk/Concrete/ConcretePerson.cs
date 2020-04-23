@@ -64,9 +64,7 @@ namespace HH.Project.DingTalk.Concrete
                         //同步到第三方中间表
                         string thirdSystemSql = "INSERT AUTH_User_ThirdSystem (IdSysUsers,GidThirdSystem,AUTH)VALUES (@AC,@Sys,1)";
                         conn.Execute(thirdSystemSql, new[] { new { AC = acId, Sys = DingTalk }, new { AC = acId, Sys = Office } });
-                        //一卡通表新增数据
-                        string cardSql = "INSERT dbo.DB_MetroCard(Creater,IdCreater,CardNumber)VALUES( @Creater,@Id,@Card)";
-                        conn.Execute(cardSql, new { Id = person.OR_Person.Id, Card = user.Userid, Creater = user.Name });
+                      
                     }
                   
                     //部门及人员 赋值
